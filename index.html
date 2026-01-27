@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 补充SEO相关meta标签 -->
+    <meta name="description" content="万厨胜专业回收二手厨具、商用厨房设备，提供KTV/酒店/酒楼设备打拆搬运一站式服务，免费上门评估，高价回收，24小时服务热线13060750675">
+    <meta name="keywords" content="二手厨具回收,商用设备回收,厨具打拆搬运,KTV设备回收,酒店设备回收,佛山厨具回收">
+    <meta name="author" content="万厨胜厨具回收">
+    <!-- 网站图标（可替换为实际图标地址） -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>万厨胜二手厨具回收 - 专业商用设备回收、打拆搬运一站式服务</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", Arial, sans-serif;
+        }
+        body {
+            color: #333;
+            background-color: #fff;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* 顶部导航 */
+        .header {
+            background: #2c3e50;
+            color: #fff;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 9999; /* 提升层级确保不被遮挡 */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* 增加阴影提升质感 */
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .logo span {
+            color: #f39c12;
+        }
+        .nav {
+            display: flex;
+            gap: 30px;
+        }
+        .nav a {
+            transition: color 0.3s ease; /* 优化过渡效果 */
+            position: relative;
+        }
+        /* 导航hover下划线效果 */
+        .nav a:hover {
+            color: #f39c12;
+        }
+        .nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #f39c12;
+            transition: width 0.3s ease;
+        }
+        .nav a:hover::after {
+            width: 100%;
+        }
+        .hotline {
+            text-align: center;
+        }
+        .hotline p:first-child {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        .hotline p:last-child {
+            font-size: 18px;
+            font-weight: bold;
+            color: #f39c12; /* 突出电话颜色 */
+        }
+        /* Banner区 */
+        .banner {
+            background: url('https://via.placeholder.com/1920x600') center center no-repeat;
+            background-size: cover;
+            padding: 120px 0;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+        .banner::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+        }
+        .banner-content {
+            position: relative;
+            z-index: 2;
+        }
+        .banner h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2; /* 优化行高 */
+        }
+        .banner p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        .btn {
+            display: inline-block;
+            background: #f39c12;
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s ease; /* 优化过渡 */
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #e67e22;
+            transform: translateY(-2px); /* 轻微上浮效果 */
+            box-shadow: 0 4px 12px rgba(230, 126, 34, 0.3);
+        }
+        /* 核心优势 */
+        .advantages {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            color: #2c3e50;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        /* 标题下划线装饰 */
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #f39c12;
+        }
+        .advantages-list {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .advantage-item {
+            width: calc(25% - 22.5px);
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* 增加hover效果 */
+        }
+        .advantage-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        .advantage-icon {
+            font-size: 48px;
+            color: #f39c12;
+            margin-bottom: 20px;
+        }
+        .advantage-item h4 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        .advantage-item p {
+            color: #666;
+        }
+        /* 关于我们 */
+        .about {
+            padding: 80px 0;
+        }
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        .about-img {
+            width: 50%;
+        }
+        .about-img img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* 增加图片阴影 */
+        }
+        .about-text {
+            width: 50%;
+        }
+        .about-text h4 {
+            font-size: 20px;
+            margin: 30px 0 10px;
+            color: #2c3e50;
+        }
+        .about-text ul {
+            padding-left: 20px;
+            list-style: disc;
+            color: #666;
+        }
+        .about-text li {
+            margin-bottom: 8px;
+        }
+        /* 服务项目 */
+        .services {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        .services-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .service-item {
+            width: calc(33.333% - 20px);
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        .service-item h4 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #f39c12;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .service-item h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: #f39c12;
+        }
+        .service-item p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        /* 回收范围 */
+        .scope {
+            padding: 80px 0;
+        }
+        .scope-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+        .scope-tag {
+            background: #2c3e50;
+            color: #fff;
+            padding: 20px 30px;
+            border-radius: 30px;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            cursor: pointer; /* 增加鼠标指针 */
+        }
+        .scope-tag:hover {
+            background: #f39c12;
+            transform: scale(1.05); /* 轻微放大 */
+        }
+        .tip-box {
+            padding: 20px;
+            border-left: 4px solid #f39c12;
+            background: #fff3cd;
+            border-radius: 5px;
+            color: #856404;
+            line-height: 1.8;
+        }
+        /* 联系方式 */
+        .contact {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        .contact-content {
+            display: flex;
+            gap: 60px;
+        }
+        .contact-form {
+            width: 50%;
+        }
+        .contact-form h4 {
+            font-size: 22px;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        /* 标记必填项 */
+        .form-group label::after {
+            content: '*';
+            color: #e74c3c;
+            margin-left: 5px;
+        }
+        .form-control {
+            width: 100%;
+            padding: 12px 15px; /* 优化内边距 */
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: #f39c12; /* 聚焦边框颜色 */
+            box-shadow: 0 0 0 3px rgba(243, 156, 18, 0.1);
+        }
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .contact-info {
+            width: 50%;
+        }
+        .contact-info h4 {
+            font-size: 22px;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+        .info-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .info-card p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        .info-card p strong {
+            color: #2c3e50;
+            min-width: 80px;
+            display: inline-block;
+        }
+        .map-img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .map-tip {
+            font-size: 14px;
+            color: #666;
+            text-align: center;
+        }
+        /* 常见问题 */
+        .faq {
+            padding: 80px 0;
+        }
+        .faq-list {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .faq-item {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: box-shadow 0.3s ease;
+        }
+        .faq-item:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+        .faq-item h5 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        .faq-item p {
+            color: #666;
+            line-height: 1.8;
+        }
+        /* 页脚 */
+        .footer {
+            background: #2c3e50;
+            color: #fff;
+            padding: 50px 0 20px;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .footer-col {
+            width: calc(25% - 22.5px);
+        }
+        .footer-col h4 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #fff;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #f39c12;
+        }
+        .footer-col p {
+            color: #bdc3c7;
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+        .footer-nav li {
+            margin-bottom: 10px;
+        }
+        .footer-nav a {
+            color: #bdc3c7;
+            transition: color 0.3s ease;
+        }
+        .footer-nav a:hover {
+            color: #f39c12;
+            padding-left: 5px; /* 轻微缩进效果 */
+        }
+        .qrcode {
+            width: 120px;
+            height: 120px;
+            background: #fff;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            color: #2c3e50;
+            font-size: 12px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        .qrcode-tip {
+            text-align: center;
+            color: #bdc3c7;
+            font-size: 14px;
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #34495e;
+            color: #bdc3c7;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        /* 表单提交提示框 */
+        .form-alert {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px 40px;
+            background: #27ae60;
+            color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            z-index: 99999;
+            display: none;
+            font-size: 18px;
+        }
+        /* 响应式调整 */
+        @media (max-width: 1200px) {
+            .advantage-item {
+                width: calc(50% - 15px);
+            }
+            .service-item {
+                width: calc(50% - 15px);
+            }
+        }
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            .nav {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .banner h2 {
+                font-size: 36px;
+            }
+            .banner p {
+                font-size: 16px;
+            }
+            .about-content, .contact-content {
+                flex-direction: column;
+            }
+            .about-img, .about-text, .contact-form, .contact-info {
+                width: 100%;
+            }
+            .advantage-item, .service-item, .footer-col {
+                width: 100%;
+            }
+            /* 移动端优化间距 */
+            .advantages, .about, .services, .scope, .contact, .faq {
+                padding: 40px 0;
+            }
+            .section-title {
+                font-size: 28px;
+                margin-bottom: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 表单提交提示框 -->
+    <div class="form-alert" id="formAlert">需求提交成功！我们将尽快与您联系报价。</div>
+
+    <!-- 顶部导航 -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">万厨胜<span>厨具回收</span></div>
+            <nav class="nav">
+                <a href="#home">首页</a>
+                <a href="#about">关于我们</a>
+                <a href="#services">服务项目</a>
+                <a href="#scope">回收范围</a>
+                <a href="#contact">联系方式</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+            <div class="hotline">
+                <p>24小时服务热线</p>
+                <p>13060750675</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner区 -->
+    <section class="banner" id="home">
+        <div class="container banner-content">
+            <h2>专业商用场所设备回收 · 打拆搬运一站式服务</h2>
+            <p>覆盖KTV、酒店、酒楼、咖啡厅等全场景，高价回收、免费上门、安全打拆、高效搬运</p>
+            <a href="#contact" class="btn">立即咨询报价</a>
+        </div>
+    </section>
+
+    <!-- 核心优势 -->
+    <section class="advantages">
+        <div class="container">
+            <h3 class="section-title">我们的核心优势</h3>
+            <div class="advantages-list">
+                <div class="advantage-item">
+                    <div class="advantage-icon">💰</div>
+                    <h4>高价透明回收</h4>
+                    <p>专业评估团队上门勘测，报价公开透明，无隐藏费用，现金交易快速到账</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">🏠</div>
+                    <h4>免费上门服务</h4>
+                    <p>免费上门查看、评估、拆卸、搬运，全程无需客户动手，省心省力省成本</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">⚡</div>
+                    <h4>快速响应高效</h4>
+                    <p>24小时接听咨询电话，接单后最快2小时上门，标准化流程确保服务时效</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">🛡️</div>
+                    <h4>安全规范操作</h4>
+                    <p>专业打拆团队配备防护装备，遵循安全标准作业，避免场地损坏与安全隐患</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="tu/hudaxia_20260123193307_7_266.jpg" alt="万厨胜门店实景-专业厨具回收团队">
+                    <!--  img src="tu/hudaxia_20260123193307_6_266.jpg" alt="万厨胜门店实景-专业厨具回收团队"-->
+                </div>
+                <div class="about-text">
+                    <h3 class="section-title" style="text-align: left; margin-bottom: 20px;">关于万厨胜</h3>
+                    <p>万厨胜深耕商用设备回收与打拆搬运领域，旗下拥有广东万厨胜酒店用品有限公司与佛山市南海区万厨胜厨具商行两大经营主体，凭借正规资质、专业能力与良好口碑，成为佛山及周边地区商用场所设备处置的优选合作伙伴。</p>
+                    <p>自2023年成立以来，我们始终秉持“诚信经营、客户至上”的理念，专注为各类商用场所提供一站式设备回收与处置服务，从评估报价、专业打拆到搬运清理，全程闭环服务，解决客户后顾之忧。</p>
+                    <h4>核心资质</h4>
+                    <ul>
+                        <li>正规工商注册企业，资质齐全可查</li>
+                        <li>专业打拆搬运团队，持证上岗</li>
+                        <li>多年商用设备回收经验，评估精准</li>
+                        <li>固定实体门店，售后有保障</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 服务项目 -->
+    <section class="services" id="services">
+        <div class="container">
+            <h3 class="section-title">核心服务项目</h3>
+            <div class="services-list">
+                <div class="service-item">
+                    <h4>二手厨具回收</h4>
+                    <p>回收各类商用厨房设备，包括灶具、消毒柜、冰箱、洗碗机、蒸箱、保鲜柜、厨具配件等，无论新旧、好坏均上门回收，为餐饮企业盘活闲置资产。</p>
+                    <p>适配场景：酒楼、西餐厅、咖啡厅、快餐店、食堂等餐饮场所。</p>
+                </div>
+                <div class="service-item">
+                    <h4>专业打拆搬运</h4>
+                    <p>提供商用场所整体打拆服务，包括墙体拆除、设备拆卸、垃圾清运等，配备专业工具与防护设备，严格按照安全规范作业，确保施工安全与场地整洁。</p>
+                    <p>适配场景：酒店、KTV、网吧、办公室、台球厅等各类商用空间。</p>
+                </div>
+                <div class="service-item">
+                    <h4>空调及电器回收</h4>
+                    <p>回收各类商用空调（含中央空调、挂机、柜机）、音响设备、点歌系统、收银系统、办公电器等，专业拆卸、安全搬运，杜绝二次损坏。</p>
+                    <p>适配场景：酒吧、清吧、酒店、办公室、网吧等场所。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 回收范围 -->
+    <section class="scope" id="scope">
+        <div class="container">
+            <h3 class="section-title">全场景回收覆盖</h3>
+            <div class="scope-tags">
+                <span class="scope-tag">KTV</span>
+                <span class="scope-tag">酒吧</span>
+                <span class="scope-tag">酒店</span>
+                <span class="scope-tag">台球厅</span>
+                <span class="scope-tag">清吧</span>
+                <span class="scope-tag">办公室</span>
+                <span class="scope-tag">网吧</span>
+                <span class="scope-tag">咖啡厅</span>
+                <span class="scope-tag">西餐厅</span>
+                <span class="scope-tag">酒楼</span>
+            </div>
+            <div class="tip-box">
+                <p>提示：无论您是场所停业、升级换代、搬迁转让，我们均可提供定制化回收与打拆方案，全程上门服务，无需您承担任何额外费用。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h3 class="section-title">联系我们</h3>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <h4>快速对接通道</h4>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">联系人</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="请输入您的姓名" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">联系电话</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="请输入您的手机号" 
+                                   pattern="^1[3-9]\d{9}$" required title="请输入正确的11位手机号">
+                        </div>
+                        <div class="form-group">
+                            <label for="scene">场所类型</label>
+                            <select id="scene" name="scene" class="form-control" required>
+                                <option value="">请选择您的场所类型</option>
+                                <option value="ktv">KTV</option>
+                                <option value="bar">酒吧/清吧</option>
+                                <option value="hotel">酒店</option>
+                                <option value="restaurant">酒楼/西餐厅/咖啡厅</option>
+                                <option value="office">办公室</option>
+                                <option value="other">其他场所</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">需求描述</label>
+                            <textarea id="message" name="message" class="form-control" placeholder="请简要描述您的需求（如设备回收、打拆搬运等）" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">提交需求 免费报价</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h4>联系方式</h4>
+                    <div class="info-card">
+                        <p><strong>服务热线：</strong>13060750675</p>
+                        <p><strong>备用电话：</strong>13824433330</p>
+                        <p><strong>门店地址：</strong>广东省佛山市南海区广佛新干线与岭南路交叉口西200米（万厨胜厨具二手商场）</p>
+                        <p><strong>营业时间：</strong>周一至周日 8:00-20:00（节假日不休）</p>
+                        <p><strong>线上渠道：</strong>抖音搜索“万厨胜”关注官方账号</p>
+                        <img src="https://via.placeholder.com/400x300" alt="万厨胜门店位置地图-点击可导航" class="map-img">
+                        <p class="map-tip">点击地图可导航至门店</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见问题 -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h3 class="section-title">常见问题</h3>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h5>Q：回收设备需要客户自己拆卸和搬运吗？</h5>
+                    <p>A：不需要。我们提供全程上门服务，专业团队负责设备拆卸、搬运，客户无需动手，且不收取任何拆卸搬运费。</p>
+                </div>
+                <div class="faq-item">
+                    <h5>Q：回收报价是怎么定的？是否透明？</h5>
+                    <p>A：报价基于设备品牌、新旧程度、功能完整性、市场残值等因素，由专业评估师上门勘测后现场报价，报价公开透明，无任何隐藏费用，客户同意后再签订回收协议。</p>
+                </div>
+                <div class="faq-item">
+                    <h5>Q：回收款项是怎么结算的？</h5>
+                    <p>A：设备拆卸搬运完成后，当场现金结算或转账支付，确保款项快速到账，不拖欠、不押款。</p>
+                </div>
+                <div class="faq-item">
+                    <h5>Q：打拆作业会对场地造成损坏吗？</h5>
+                    <p>A：我们的团队具备丰富的商用场所打拆经验，严格按照安全规范作业，配备专业防护工具，尽量保护场地原有结构，打拆后会清理现场垃圾，保持场地整洁。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>万厨胜厨具回收</h4>
+                    <p>专业商用设备回收、打拆搬运一站式服务商，为您提供高效、便捷、安全的服务体验。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul class="footer-nav">
+                        <li><a href="#home">首页</a></li>
+                        <li><a href="#about">关于我们</a></li>
+                        <li><a href="#services">服务项目</a></li>
+                        <li><a href="#scope">回收范围</a></li>
+                        <li><a href="#contact">联系方式</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系信息</h4>
+                    <p>电话：13060750675</p>
+                    <p>地址：佛山市南海区广佛新干线与岭南路交叉口西200米</p>
+                    <p>营业时间：8:00-20:00（24小时接单）</p>
+                </div>
+                <div class="footer-col">
+                    <h4>官方抖音</h4>
+                    <div class="qrcode">
+        <!-- 嵌入二维码图片，src 为图片相对路径 -->
+        <img src="tu/a7a4af9844b2861ff20af899af7118bb.png" 
+                   alt="抖音二维码"
+               style="width: 120px; height: 120px; display: block; margin: 0 auto;">
+                    </div>
+                    <p class="qrcode-tip">扫码关注获取更多案例</p>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2026 万厨胜厨具回收 版权所有
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // 表单提交处理（替换alert为友好提示框）
+        const contactForm = document.getElementById('contactForm');
+        const formAlert = document.getElementById('formAlert');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // 显示提示框
+            formAlert.style.display = 'block';
+            
+            // 3秒后隐藏提示框
+            setTimeout(() => {
+                formAlert.style.display = 'none';
+            }, 3000);
+            
+            // 重置表单
+            this.reset();
+        });
+
+        // 滚动导航高亮（可选增强）
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollY = window.pageYOffset;
+            
+            sections.forEach(section => {
+                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop - 100;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    document.querySelectorAll('.nav a').forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.style.color = '#f39c12';
+                        } else {
+                            link.style.color = '#fff';
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
